@@ -42,7 +42,7 @@ class CoachMarksControllerTests: XCTestCase, CoachMarksControllerDelegate {
         self.delegateEndExpectation = self.expectationWithDescription("DidFinishShowing")
 
         self.coachMarksController.startOn(self.parentController)
-        self.coachMarksController.stop()
+        self.coachMarksController.finish()
 
         self.waitForExpectationsWithTimeout(10) { error in
             if let error = error {
@@ -55,7 +55,7 @@ class CoachMarksControllerTests: XCTestCase, CoachMarksControllerDelegate {
         self.delegateEndExpectation = self.expectationWithDescription("Detachment")
 
         self.coachMarksController.startOn(self.parentController)
-        self.coachMarksController.stop()
+        self.coachMarksController.finish()
 
         self.waitForExpectationsWithTimeout(10) { error in
             if let error = error {

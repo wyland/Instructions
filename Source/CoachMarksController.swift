@@ -139,7 +139,10 @@ public class CoachMarksController: UIViewController, OverlayViewDelegate {
     /// This view will be added to the current `UIWindow` and cover everything.
     /// The overlay and the coachmarks will all be subviews of this property.
     private var instructionsTopView = UIView()
-
+    
+    // The VC the CoachMark gets attached to
+    private var parentVC: UIViewController?
+    
     /// Sometimes, the chain of coach mark display can be paused
     /// to let animations be performed. `true` to pause the execution,
     /// `false` otherwise.
@@ -213,7 +216,7 @@ public class CoachMarksController: UIViewController, OverlayViewDelegate {
     ///
     /// - Parameter sender: the object sending the message
     public func skipCoachMarksTour(sender: AnyObject?) {
-        self.stop()
+        self.finish()
     }
 
     //MARK: - Public Helpers
@@ -349,6 +352,7 @@ public class CoachMarksController: UIViewController, OverlayViewDelegate {
         // If coach marks are currently being displayed, calling `start()` doesn't do anything.
         if (self.started) { return }
 
+        self.parentVC = parentViewController
         self.attachToViewController(parentViewController)
 
         // We make sure we are in a idle state and get the number of coach marks to display
@@ -383,8 +387,20 @@ public class CoachMarksController: UIViewController, OverlayViewDelegate {
         })
     }
 
-    /// Stop displaying the coach marks and perform some cleanup.
+    // Instead of just pausing, give control back to the VC
     public func stop() {
+        self.paused = true
+        
+        UIView.animateWithDuration(self.overlayFadeAnimationDuration, animations: { () -> Void in
+          self.overlayView.alpha = 0.0
+          self.currentCoachMarkView?.alpha = 0.0
+          }, completion: {(finished: Bool) -> Void in
+            self.detachFromViewController()
+        })
+    }
+    
+    /// Stop displaying the coach marks and perform some cleanup.
+    public func finish() {
         UIView.animateWithDuration(self.overlayFadeAnimationDuration, animations: { () -> Void in
             self.overlayView.alpha = 0.0
             self.skipViewAsView?.alpha = 0.0
@@ -393,6 +409,7 @@ public class CoachMarksController: UIViewController, OverlayViewDelegate {
             self.skipView?.skipControl?.removeTarget(self, action: "skipCoachMarksTour:", forControlEvents: .TouchUpInside)
             self.reset()
             self.detachFromViewController()
+            self.parentVC = nil
 
             // Calling the delegate, maybe the user wants to do something?
             self.delegate?.didFinishShowingFromCoachMarksController(self)
@@ -410,9 +427,15 @@ public class CoachMarksController: UIViewController, OverlayViewDelegate {
     /// Resume the display.
     /// If the display wasn't paused earlier, this method won't do anything.
     public func resume() {
-        if self.started && self.paused {
+        if self.started && self.paused && self.parentVC != nil {
             self.paused = false
-            self.createAndShowCoachMark(shouldCallDelegate: false)
+            self.attachToViewController(self.parentVC!)
+              UIView.animateWithDuration(self.overlayFadeAnimationDuration, animations: { () -> Void in
+                self.overlayView.alpha = 1.0
+                self.currentCoachMarkView?.alpha = 1.0
+                }, completion: {(finished: Bool) -> Void in
+                  self.createAndShowCoachMark(shouldCallDelegate: false)
+          })
         }
     }
 
@@ -484,7 +507,7 @@ public class CoachMarksController: UIViewController, OverlayViewDelegate {
                 if self.currentIndex < self.numberOfCoachMarks {
                     self.createAndShowCoachMark()
                 } else {
-                    self.stop()
+                    self.finish()
                 }
             }
         } else {
