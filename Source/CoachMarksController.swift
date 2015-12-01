@@ -394,6 +394,7 @@ public class CoachMarksController: UIViewController, OverlayViewDelegate {
         UIView.animateWithDuration(self.overlayFadeAnimationDuration, animations: { () -> Void in
           self.overlayView.alpha = 0.0
           self.currentCoachMarkView?.alpha = 0.0
+          self.skipView?.skipControl?.alpha = 0.0
           }, completion: {(finished: Bool) -> Void in
             self.detachFromViewController()
         })
@@ -405,6 +406,7 @@ public class CoachMarksController: UIViewController, OverlayViewDelegate {
             self.overlayView.alpha = 0.0
             self.skipViewAsView?.alpha = 0.0
             self.currentCoachMarkView?.alpha = 0.0
+            self.skipView?.skipControl?.alpha = 0.0
         }, completion: {(finished: Bool) -> Void in
             self.skipView?.skipControl?.removeTarget(self, action: "skipCoachMarksTour:", forControlEvents: .TouchUpInside)
             self.reset()
@@ -433,6 +435,7 @@ public class CoachMarksController: UIViewController, OverlayViewDelegate {
               UIView.animateWithDuration(self.overlayFadeAnimationDuration, animations: { () -> Void in
                 self.overlayView.alpha = 1.0
                 self.currentCoachMarkView?.alpha = 1.0
+                self.skipView?.skipControl?.alpha = 1.0
                 }, completion: {(finished: Bool) -> Void in
                   self.createAndShowCoachMark(shouldCallDelegate: false)
           })
