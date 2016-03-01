@@ -358,6 +358,7 @@ public class CoachMarksController: UIViewController, OverlayViewDelegate {
         // We make sure we are in a idle state and get the number of coach marks to display
         // from the datasource.
         self.currentIndex = -1
+        self.paused = false
         self.numberOfCoachMarks = datasource.numberOfCoachMarksForCoachMarksController(self)
 
         if self.numberOfCoachMarks == 0 {
@@ -447,7 +448,8 @@ public class CoachMarksController: UIViewController, OverlayViewDelegate {
     private func reset() {
         self.numberOfCoachMarks = 0
         self.currentIndex = -1
-
+        self.paused = false
+        
         self.currentCoachMark = nil
         self.currentCoachMarkView = nil
     }
