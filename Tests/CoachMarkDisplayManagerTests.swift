@@ -38,7 +38,7 @@ class CoachMarkDisplayManagerTests: XCTestCase {
         var coachMark = CoachMark()
         coachMark.cutoutPath = UIBezierPath(rect: CGRect(x: 30, y: 30, width: 60, height: 30))
 
-        self.viewIsVisibleExpectation = self.expectationWithDescription("viewIsVisible")
+        self.viewIsVisibleExpectation = self.expectation(description: "viewIsVisible")
 
         coachMark.computeOrientationInFrame(self.instructionsTopView.frame)
         coachMark.computePointOfInterestInFrame()
@@ -50,7 +50,7 @@ class CoachMarkDisplayManagerTests: XCTestCase {
             self.viewIsVisibleExpectation?.fulfill()
         }
 
-        self.waitForExpectationsWithTimeout(5) { error in
+        self.waitForExpectations(timeout: 5) { error in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
             }
