@@ -89,19 +89,19 @@ public class CoachMarkBodyDefaultView : UIControl, CoachMarkBodyView {
             metrics: nil, views: ["backgroundImageView": self.backgroundImageView]))
 
 
-        hintLabel.backgroundColor = UIColor.clear()
-        hintLabel.textColor = UIColor.darkGray()
+        hintLabel.backgroundColor = UIColor.clear
+        hintLabel.textColor = UIColor.darkGray
         hintLabel.font = UIFont.systemFont(ofSize: 15.0)
         hintLabel.isScrollEnabled = false
         hintLabel.textAlignment = .justified
         hintLabel.layoutManager.hyphenationFactor = 2.0
         hintLabel.isEditable = false
 
-        nextLabel.textColor = UIColor.darkGray()
+        nextLabel.textColor = UIColor.darkGray
         nextLabel.font = UIFont.systemFont(ofSize: 17.0)
         nextLabel.textAlignment = .center
 
-        separator.backgroundColor = UIColor.gray()
+        separator.backgroundColor = UIColor.gray
 
         nextLabel.translatesAutoresizingMaskIntoConstraints = false
         hintLabel.translatesAutoresizingMaskIntoConstraints = false

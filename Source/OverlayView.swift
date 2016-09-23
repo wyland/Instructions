@@ -159,7 +159,7 @@ internal class OverlayView: UIView {
             return
         }
 
-        self.backgroundColor = UIColor.clear()
+        self.backgroundColor = UIColor.clear
 
         self.cutoutMaskLayer = CAShapeLayer()
         self.cutoutMaskLayer.name = "cutoutMaskLayer"

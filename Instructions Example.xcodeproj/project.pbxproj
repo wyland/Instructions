@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C636FFAA1BBBD99200EB243B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C636FFA91BBBD99200EB243B /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
-		C636FFB11BBC329600EB243B /* TransparentCoachMarkArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C636FFAF1BBC329600EB243B /* TransparentCoachMarkArrowView.swift */; settings = {ASSET_TAGS = (); }; };
-		C636FFB21BBC329600EB243B /* TransparentCoachMarkBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C636FFB01BBC329600EB243B /* TransparentCoachMarkBodyView.swift */; settings = {ASSET_TAGS = (); }; };
+		C636FFAA1BBBD99200EB243B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C636FFA91BBBD99200EB243B /* Assets.xcassets */; };
+		C636FFB11BBC329600EB243B /* TransparentCoachMarkArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C636FFAF1BBC329600EB243B /* TransparentCoachMarkArrowView.swift */; };
+		C636FFB21BBC329600EB243B /* TransparentCoachMarkBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C636FFB01BBC329600EB243B /* TransparentCoachMarkBodyView.swift */; };
 		C6402BE01BBE6EBD0087E23F /* Instructions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64FB36F1BB75F4D0081E5B6 /* Instructions.framework */; };
 		C6402BE11BBE6EBD0087E23F /* Instructions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C64FB36F1BB75F4D0081E5B6 /* Instructions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C64FB3351BB6CC180081E5B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FB32D1BB6CC180081E5B6 /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		C64FB3371BB6CC180081E5B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C64FB32F1BB6CC180081E5B6 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
-		C64FB3381BB6CC180081E5B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C64FB3311BB6CC180081E5B6 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		C64FB33A1BB6CC180081E5B6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FB3341BB6CC180081E5B6 /* ProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		C64FB3841BB98CE90081E5B6 /* CustomCoachMarkBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FB3831BB98CE90081E5B6 /* CustomCoachMarkBodyView.swift */; settings = {ASSET_TAGS = (); }; };
-		C64FB3861BB98EC20081E5B6 /* CustomCoachMarkArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FB3851BB98EC20081E5B6 /* CustomCoachMarkArrowView.swift */; settings = {ASSET_TAGS = (); }; };
-		C6CE542C1BBD435500154266 /* BlurringOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE54291BBD435500154266 /* BlurringOverlayViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		C6CE542D1BBD435500154266 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE542A1BBD435500154266 /* CustomViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		C6CE542E1BBD435500154266 /* DefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE542B1BBD435500154266 /* DefaultViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		C6CE54311BBD43CB00154266 /* DelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE542F1BBD43CB00154266 /* DelegateViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		C6CE54321BBD43CB00154266 /* MixedCoachMarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE54301BBD43CB00154266 /* MixedCoachMarksViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		C64FB3351BB6CC180081E5B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FB32D1BB6CC180081E5B6 /* AppDelegate.swift */; };
+		C64FB3371BB6CC180081E5B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C64FB32F1BB6CC180081E5B6 /* LaunchScreen.storyboard */; };
+		C64FB3381BB6CC180081E5B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C64FB3311BB6CC180081E5B6 /* Main.storyboard */; };
+		C64FB33A1BB6CC180081E5B6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FB3341BB6CC180081E5B6 /* ProfileViewController.swift */; };
+		C64FB3841BB98CE90081E5B6 /* CustomCoachMarkBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FB3831BB98CE90081E5B6 /* CustomCoachMarkBodyView.swift */; };
+		C64FB3861BB98EC20081E5B6 /* CustomCoachMarkArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FB3851BB98EC20081E5B6 /* CustomCoachMarkArrowView.swift */; };
+		C6CE542C1BBD435500154266 /* BlurringOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE54291BBD435500154266 /* BlurringOverlayViewController.swift */; };
+		C6CE542D1BBD435500154266 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE542A1BBD435500154266 /* CustomViewController.swift */; };
+		C6CE542E1BBD435500154266 /* DefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE542B1BBD435500154266 /* DefaultViewController.swift */; };
+		C6CE54311BBD43CB00154266 /* DelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE542F1BBD43CB00154266 /* DelegateViewController.swift */; };
+		C6CE54321BBD43CB00154266 /* MixedCoachMarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE54301BBD43CB00154266 /* MixedCoachMarksViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,11 +212,12 @@
 		C64FB3041BB6CB1C0081E5B6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Ephread;
 				TargetAttributes = {
 					C64FB30B1BB6CB1C0081E5B6 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -341,8 +342,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -386,8 +389,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -406,6 +411,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -414,8 +420,8 @@
 		C64FB31F1BB6CB1C0081E5B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
@@ -424,14 +430,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ephread.Instructions-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		C64FB3201BB6CB1C0081E5B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
@@ -440,6 +447,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ephread.Instructions-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

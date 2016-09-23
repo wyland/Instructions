@@ -81,7 +81,7 @@ internal class SkipViewDisplayManager {
 
             var topConstant: CGFloat = 24
 
-            if UIApplication.shared().isStatusBarHidden {
+            if UIApplication.shared.isStatusBarHidden {
                 topConstant = 0
             }
 

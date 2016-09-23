@@ -29,9 +29,9 @@ internal class MixedCoachMarksViewsViewController: ProfileViewController, CoachM
     @IBOutlet var answersLabel: UILabel?
 
     //MARK: - Private properties
-    private let swipeImage = UIImage(named: "swipe")
+    fileprivate let swipeImage = UIImage(named: "swipe")
 
-    private let answersText = "That's the number of answers you gave."
+    fileprivate let answersText = "That's the number of answers you gave."
 
     //MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -43,11 +43,11 @@ internal class MixedCoachMarksViewsViewController: ProfileViewController, CoachM
     }
 
     //MARK: - Protocol Conformance | CoachMarksControllerDataSource
-    func numberOfCoachMarksForCoachMarksController(coachMarksController: CoachMarksController) -> Int {
+    func numberOfCoachMarksForCoachMarksController(_ coachMarksController: CoachMarksController) -> Int {
         return 5
     }
 
-    func coachMarksController(coachMarksController: CoachMarksController, coachMarksForIndex index: Int) -> CoachMark {
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarksForIndex index: Int) -> CoachMark {
 
         var coachMark : CoachMark
 
@@ -71,7 +71,7 @@ internal class MixedCoachMarksViewsViewController: ProfileViewController, CoachM
         return coachMark
     }
 
-    func coachMarksController(coachMarksController: CoachMarksController, coachMarkViewsForIndex index: Int, coachMark: CoachMark) -> (bodyView: CoachMarkBodyView, arrowView: CoachMarkArrowView?) {
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkViewsForIndex index: Int, coachMark: CoachMark) -> (bodyView: CoachMarkBodyView, arrowView: CoachMarkArrowView?) {
 
         var bodyView : CoachMarkBodyView
         var arrowView : CoachMarkArrowView?
@@ -82,7 +82,7 @@ internal class MixedCoachMarksViewsViewController: ProfileViewController, CoachM
             var coachMarkArrowView: CustomCoachMarkArrowView? = nil
 
             coachMarkBodyView.hintLabel.text = self.handleText
-            coachMarkBodyView.nextButton.setTitle(self.nextButtonText, forState: .Normal)
+            coachMarkBodyView.nextButton.setTitle(self.nextButtonText, for: UIControlState())
 
             var width: CGFloat = 0.0
 
@@ -93,7 +93,7 @@ internal class MixedCoachMarksViewsViewController: ProfileViewController, CoachM
             if let arrowOrientation = coachMark.arrowOrientation {
                 coachMarkArrowView = CustomCoachMarkArrowView(orientation: arrowOrientation)
 
-                coachMarkArrowView!.plate.addConstraint(NSLayoutConstraint(item: coachMarkArrowView!.plate, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: width))
+                coachMarkArrowView!.plate.addConstraint(NSLayoutConstraint(item: coachMarkArrowView!.plate, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: width))
             }
 
             bodyView = coachMarkBodyView

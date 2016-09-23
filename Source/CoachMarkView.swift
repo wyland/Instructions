@@ -176,7 +176,7 @@ final internal class CoachMarkView : UIView, CoachMarkBodyHighlightArrowDelegate
                                                    toItem: self.bodyView, attribute: .bottom,
                                                    multiplier: 1, constant: 0)
 
-        if let arrowView = self.arrowView, arrowOrientation = self.arrowOrientation {
+        if let arrowView = self.arrowView, let arrowOrientation = self.arrowOrientation {
             let arrowView = arrowView as! UIView
 
             self.addSubview(arrowView)

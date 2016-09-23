@@ -28,9 +28,9 @@ public class CoachMarkArrowDefaultView : UIImageView, CoachMarkArrowView {
     //MARK: - Initialization
     public init(orientation: CoachMarkArrowOrientation) {
         if orientation == .top {
-            super.init(image: UIImage(named: "arrow-top", in: Bundle(for: self.dynamicType), compatibleWith: nil), highlightedImage: UIImage(named: "arrow-top-highlighted", in: Bundle(for: self.dynamicType), compatibleWith: nil)!)
+            super.init(image: UIImage(named: "arrow-top", in: Bundle(for: type(of: self)), compatibleWith: nil), highlightedImage: UIImage(named: "arrow-top-highlighted", in: Bundle(for: type(of: self)), compatibleWith: nil)!)
         } else {
-            super.init(image: UIImage(named: "arrow-bottom", in: Bundle(for: self.dynamicType), compatibleWith: nil), highlightedImage: UIImage(named: "arrow-bottom-highlighted", in: Bundle(for: self.dynamicType), compatibleWith: nil)!)
+            super.init(image: UIImage(named: "arrow-bottom", in: Bundle(for: type(of: self)), compatibleWith: nil), highlightedImage: UIImage(named: "arrow-bottom-highlighted", in: Bundle(for: type(of: self)), compatibleWith: nil)!)
         }
 
         self.translatesAutoresizingMaskIntoConstraints = false

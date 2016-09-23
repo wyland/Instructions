@@ -40,7 +40,7 @@ public class CoachMarkSkipDefaultView : UIButton, CoachMarkSkipView {
     public convenience init() {
         self.init(frame: CGRect.zero)
 
-        self.setTitleColor(UIColor.black(), for: UIControlState())
+        self.setTitleColor(UIColor.black, for: UIControlState())
         self.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
         self.titleLabel?.textAlignment = .center
     }
