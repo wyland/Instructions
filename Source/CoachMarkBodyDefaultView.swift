@@ -82,10 +82,10 @@ public class CoachMarkBodyDefaultView : UIControl, CoachMarkBodyView {
 
         self.addSubview(self.backgroundImageView)
 
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[backgroundImageView]|", options: NSLayoutFormatOptions(rawValue: 0),
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[backgroundImageView]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil, views: ["backgroundImageView": self.backgroundImageView]))
 
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[backgroundImageView]|", options: NSLayoutFormatOptions(rawValue: 0),
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[backgroundImageView]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil, views: ["backgroundImageView": self.backgroundImageView]))
 
 
@@ -115,16 +115,16 @@ public class CoachMarkBodyDefaultView : UIControl, CoachMarkBodyView {
         self.addSubview(hintLabel)
         self.addSubview(separator)
 
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[nextLabel]|", options: NSLayoutFormatOptions(rawValue: 0),
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[nextLabel]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil, views: ["nextLabel": nextLabel]))
 
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(5)-[hintLabel]-(5)-|", options: NSLayoutFormatOptions(rawValue: 0),
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(5)-[hintLabel]-(5)-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil, views: ["hintLabel": hintLabel]))
 
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(15)-[separator]-(15)-|", options: NSLayoutFormatOptions(rawValue: 0),
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(15)-[separator]-(15)-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil, views: ["separator": separator]))
 
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-(10)-[hintLabel]-(10)-[separator(==1)][nextLabel(==55)]|", options: NSLayoutFormatOptions(rawValue: 0),
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-(10)-[hintLabel]-(10)-[separator(==1)][nextLabel(==55)]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil, views: ["hintLabel": hintLabel, "separator": separator, "nextLabel": nextLabel]))
     }
 }

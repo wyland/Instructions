@@ -34,8 +34,8 @@ class CoachMarksControllerTests: XCTestCase, CoachMarksControllerDelegate {
     func testThatCoachMarkControllerAttachItselfToParent() {
         self.coachMarksController.startOn(self.parentController)
 
-        self.parentController.childViewControllers
-        XCTAssertTrue(self.parentController.childViewControllers.contains(self.coachMarksController))
+        let _ = self.parentController.children
+        XCTAssertTrue(self.parentController.children.contains(self.coachMarksController))
     }
 
     func testThatDidFinishShowingIsCalled() {
@@ -71,8 +71,8 @@ class CoachMarksControllerTests: XCTestCase, CoachMarksControllerDelegate {
         }
 
         if (delegateEndExpectation.description == "Detachment") {
-            self.parentController.childViewControllers
-            XCTAssertFalse(self.parentController.childViewControllers.contains(self.coachMarksController))
+            let _ = self.parentController.children
+            XCTAssertFalse(self.parentController.children.contains(self.coachMarksController))
 
             delegateEndExpectation.fulfill()
         } else if (delegateEndExpectation.description == "DidFinishShowing") {

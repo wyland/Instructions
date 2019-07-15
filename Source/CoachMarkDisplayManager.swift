@@ -133,7 +133,7 @@ internal class CoachMarkDisplayManager {
         instructionsTopView.addSubview(coachMarkView)
 
         instructionsTopView.addConstraints(
-            NSLayoutConstraint.constraints(withVisualFormat: "H:[currentCoachMarkView(<=\(coachMark.maxWidth))]", options: NSLayoutFormatOptions(rawValue: 0),
+            NSLayoutConstraint.constraints(withVisualFormat: "H:[currentCoachMarkView(<=\(coachMark.maxWidth))]", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                 metrics: nil, views: ["currentCoachMarkView": coachMarkView])
         )
 
@@ -178,7 +178,7 @@ internal class CoachMarkDisplayManager {
         switch(segmentIndex) {
         case 1:
             instructionsTopView.addConstraints(
-                NSLayoutConstraint.constraints(withVisualFormat: "H:|-(==\(horizontalMargin))-[currentCoachMarkView(<=\(maxWidth))]-(>=\(horizontalMargin))-|", options: NSLayoutFormatOptions(rawValue: 0),
+                NSLayoutConstraint.constraints(withVisualFormat: "H:|-(==\(horizontalMargin))-[currentCoachMarkView(<=\(maxWidth))]-(>=\(horizontalMargin))-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                     metrics: nil, views: ["currentCoachMarkView": coachMarkView])
             )
 
@@ -189,7 +189,7 @@ internal class CoachMarkDisplayManager {
             instructionsTopView.addConstraint(NSLayoutConstraint(item: coachMarkView, attribute: .centerX, relatedBy: .equal, toItem: instructionsTopView, attribute: .centerX, multiplier: 1, constant: 0))
 
             instructionsTopView.addConstraints(
-                NSLayoutConstraint.constraints(withVisualFormat: "H:|-(>=\(horizontalMargin))-[currentCoachMarkView(<=\(maxWidth)@1000)]-(>=\(horizontalMargin))-|", options: NSLayoutFormatOptions(rawValue: 0),
+                NSLayoutConstraint.constraints(withVisualFormat: "H:|-(>=\(horizontalMargin))-[currentCoachMarkView(<=\(maxWidth)@1000)]-(>=\(horizontalMargin))-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                     metrics: nil, views: ["currentCoachMarkView": coachMarkView])
             )
 
@@ -199,7 +199,7 @@ internal class CoachMarkDisplayManager {
 
         case 3:
             instructionsTopView.addConstraints(
-                NSLayoutConstraint.constraints(withVisualFormat: "H:|-(>=\(horizontalMargin))-[currentCoachMarkView(<=\(maxWidth))]-(==\(horizontalMargin))-|", options: NSLayoutFormatOptions(rawValue: 0),
+                NSLayoutConstraint.constraints(withVisualFormat: "H:|-(>=\(horizontalMargin))-[currentCoachMarkView(<=\(maxWidth))]-(==\(horizontalMargin))-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                     metrics: nil, views: ["currentCoachMarkView": coachMarkView])
             )
 

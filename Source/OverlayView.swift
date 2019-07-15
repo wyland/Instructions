@@ -34,7 +34,7 @@ internal class OverlayView: UIView {
     /// Setting this property to anything but `nil` will
     /// enable the effect. `overlayColor` will be ignored if this
     /// property is set.
-    var blurEffectStyle: UIBlurEffectStyle? {
+    var blurEffectStyle: UIBlurEffect.Style? {
         didSet {
             if self.blurEffectStyle != oldValue {
                 self.destroyBlurView()
@@ -112,7 +112,7 @@ internal class OverlayView: UIView {
         animation.fromValue = 1.0
         animation.toValue = 0.0
         animation.duration = duration
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         animation.isRemovedOnCompletion = true
 
         self.fullMaskLayer.add(animation, forKey: "opacityAnimationFadeIn")
@@ -132,7 +132,7 @@ internal class OverlayView: UIView {
         animation.fromValue = 0.0
         animation.toValue = 1.0
         animation.duration = duration
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         animation.isRemovedOnCompletion = true
 
         self.fullMaskLayer.add(animation, forKey: "opacityAnimationFadeOut")
@@ -163,12 +163,12 @@ internal class OverlayView: UIView {
 
         self.cutoutMaskLayer = CAShapeLayer()
         self.cutoutMaskLayer.name = "cutoutMaskLayer"
-        self.cutoutMaskLayer.fillRule = kCAFillRuleEvenOdd
+        self.cutoutMaskLayer.fillRule = CAShapeLayerFillRule.evenOdd
         self.cutoutMaskLayer.frame = self.frame
 
         self.fullMaskLayer = CAShapeLayer()
         self.fullMaskLayer.name = "fullMaskLayer"
-        self.fullMaskLayer.fillRule = kCAFillRuleEvenOdd
+        self.fullMaskLayer.fillRule = CAShapeLayerFillRule.evenOdd
         self.fullMaskLayer.frame = self.frame
         self.fullMaskLayer.opacity = 1.0
 
@@ -216,10 +216,10 @@ internal class OverlayView: UIView {
         self.blurEffectView!.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(self.blurEffectView!)
 
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[visualEffectView]|", options: NSLayoutFormatOptions(rawValue: 0),
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[visualEffectView]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil, views: ["visualEffectView": self.blurEffectView!]))
 
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[visualEffectView]|", options: NSLayoutFormatOptions(rawValue: 0),
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[visualEffectView]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil, views: ["visualEffectView": self.blurEffectView!]))
     }
 

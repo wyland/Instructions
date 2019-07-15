@@ -59,7 +59,7 @@ public class CoachMarksController: UIViewController, OverlayViewDelegate {
     /// Blur effect style for the overlay view. Keeping this property
     /// `nil` will disable the effect. This property
     /// is mutually exclusive with `overlayBackgroundColor`.
-    public var overlayBlurEffectStyle: UIBlurEffectStyle? {
+    public var overlayBlurEffectStyle: UIBlurEffect.Style? {
         get {
             return self.overlayView.blurEffectStyle
         }
@@ -208,14 +208,14 @@ public class CoachMarksController: UIViewController, OverlayViewDelegate {
     /// Will be called when the user perform an action requiring the display of the next coach mark.
     ///
     /// - Parameter sender: the object sending the message
-    public func performShowNextCoachMark(_ sender:AnyObject?) {
+    @objc public func performShowNextCoachMark(_ sender:AnyObject?) {
         self.showNextCoachMark()
     }
 
     /// Will be called when the user choose to skip the coach mark tour.
     ///
     /// - Parameter sender: the object sending the message
-    public func skipCoachMarksTour(_ sender: AnyObject?) {
+    @objc public func skipCoachMarksTour(_ sender: AnyObject?) {
         self.finish()
     }
 
@@ -460,40 +460,40 @@ public class CoachMarksController: UIViewController, OverlayViewDelegate {
     ///
     /// - Parameter parentViewController: the controller of which become a child
     private func attachToViewController(_ parentViewController: UIViewController) {
-        parentViewController.addChildViewController(self)
+        parentViewController.addChild(self)
         parentViewController.view.addSubview(self.view)
 
         self.instructionsTopView.translatesAutoresizingMaskIntoConstraints = false
         parentViewController.view?.window?.addSubview(self.instructionsTopView)
 
         parentViewController.view.addConstraints(
-            NSLayoutConstraint.constraints(withVisualFormat: "V:|[overlayView]|", options: NSLayoutFormatOptions(rawValue: 0),
+            NSLayoutConstraint.constraints(withVisualFormat: "V:|[overlayView]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                 metrics: nil, views: ["overlayView": self.view]))
 
         parentViewController.view.addConstraints(
-            NSLayoutConstraint.constraints(withVisualFormat: "H:|[overlayView]|", options: NSLayoutFormatOptions(rawValue: 0),
+            NSLayoutConstraint.constraints(withVisualFormat: "H:|[overlayView]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                 metrics: nil, views: ["overlayView": self.view]))
 
         parentViewController.view?.window?.addConstraints(
-            NSLayoutConstraint.constraints(withVisualFormat: "V:|[instructionsTopView]|", options: NSLayoutFormatOptions(rawValue: 0),
+            NSLayoutConstraint.constraints(withVisualFormat: "V:|[instructionsTopView]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                 metrics: nil, views: ["instructionsTopView": self.instructionsTopView]))
 
         parentViewController.view?.window?.addConstraints(
-            NSLayoutConstraint.constraints(withVisualFormat: "H:|[instructionsTopView]|", options: NSLayoutFormatOptions(rawValue: 0),
+            NSLayoutConstraint.constraints(withVisualFormat: "H:|[instructionsTopView]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                 metrics: nil, views: ["instructionsTopView": self.instructionsTopView]))
 
         self.instructionsTopView.backgroundColor = UIColor.clear
 
-        self.didMove(toParentViewController: parentViewController)
+        self.didMove(toParent: parentViewController)
     }
 
     /// Detach the controller from its parent view controller.
     private func detachFromViewController() {
         self.instructionsTopView.removeFromSuperview()
 
-        self.willMove(toParentViewController: nil)
+        self.willMove(toParent: nil)
         self.view.removeFromSuperview()
-        self.removeFromParentViewController()
+        self.removeFromParent()
     }
 
     /// Show the next coach mark and hide the current one.
@@ -524,10 +524,10 @@ public class CoachMarksController: UIViewController, OverlayViewDelegate {
     private func addOverlayView() {
         self.instructionsTopView.addSubview(self.overlayView)
 
-        self.instructionsTopView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[overlayView]|", options: NSLayoutFormatOptions(rawValue: 0),
+        self.instructionsTopView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[overlayView]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil, views: ["overlayView": self.overlayView]))
 
-        self.instructionsTopView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[overlayView]|", options: NSLayoutFormatOptions(rawValue: 0),
+        self.instructionsTopView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[overlayView]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil, views: ["overlayView": self.overlayView]))
 
         self.overlayView.alpha = 0.0

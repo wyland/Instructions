@@ -93,35 +93,35 @@ internal class CustomViewsViewController: ProfileViewController, CoachMarksContr
         switch(index) {
         case 0:
             coachMarkBodyView.hintLabel.text = self.avatarText
-            coachMarkBodyView.nextButton.setTitle(self.nextButtonText, for: UIControlState())
+            coachMarkBodyView.nextButton.setTitle(self.nextButtonText, for: UIControl.State())
 
             if let avatar = self.avatar {
                 width = avatar.bounds.width
             }
         case 1:
             coachMarkBodyView.hintLabel.text = self.handleText
-            coachMarkBodyView.nextButton.setTitle(self.nextButtonText, for: UIControlState())
+            coachMarkBodyView.nextButton.setTitle(self.nextButtonText, for: UIControl.State())
 
             if let handleLabel = self.handleLabel {
                 width = handleLabel.bounds.width
             }
         case 2:
             coachMarkBodyView.hintLabel.text = self.emailText
-            coachMarkBodyView.nextButton.setTitle(self.nextButtonText, for: UIControlState())
+            coachMarkBodyView.nextButton.setTitle(self.nextButtonText, for: UIControl.State())
 
             if let emailLabel = self.emailLabel {
                 width = emailLabel.bounds.width
             }
         case 3:
             coachMarkBodyView.hintLabel.text = self.postsText
-            coachMarkBodyView.nextButton.setTitle(self.nextButtonText, for: UIControlState())
+            coachMarkBodyView.nextButton.setTitle(self.nextButtonText, for: UIControl.State())
 
             if let postsLabel = self.postsLabel {
                 width = postsLabel.bounds.width
             }
         case 4:
             coachMarkBodyView.hintLabel.text = self.reputationText
-            coachMarkBodyView.nextButton.setTitle(self.nextButtonText, for: UIControlState())
+            coachMarkBodyView.nextButton.setTitle(self.nextButtonText, for: UIControl.State())
 
             if let reputationLabel = self.reputationLabel {
                 width = reputationLabel.bounds.width
@@ -150,12 +150,12 @@ internal class CustomViewsViewController: ProfileViewController, CoachMarksContr
 
         var constraints: [NSLayoutConstraint] = []
 
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|[skipView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["skipView": skipView]))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|[skipView]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: ["skipView": skipView]))
 
         if UIApplication.shared.isStatusBarHidden {
-            constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|[skipView]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["skipView": skipView]))
+            constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|[skipView]", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: ["skipView": skipView]))
         } else {
-            constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|-24-[skipView(==40)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["skipView": skipView]))
+            constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|-24-[skipView(==40)]", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: ["skipView": skipView]))
         }
 
         return constraints

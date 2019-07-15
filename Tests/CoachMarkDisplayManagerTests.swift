@@ -45,7 +45,7 @@ class CoachMarkDisplayManagerTests: XCTestCase {
 
         self.coachMarkDisplayManager.displayCoachMarkView(coachMarkView, coachMark: coachMark) {
             XCTAssertEqual(coachMarkView.alpha, 1.0)
-            XCTAssertEqual(coachMarkView.hidden, false)
+          XCTAssertEqual(coachMarkView.isHidden, false)
 
             self.viewIsVisibleExpectation?.fulfill()
         }

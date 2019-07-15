@@ -111,7 +111,7 @@ final internal class CoachMarkView : UIView, CoachMarkBodyHighlightArrowDelegate
     //MARK: - Protocol conformance | CoachMarkBodyHighlightArrowDelegate
 
     func highlightArrow(_ highlighted: Bool) {
-        self.arrowView?.highlighted = highlighted
+      self.arrowView?.isHighlighted = highlighted
     }
 
     //MARK: - Internal Method
@@ -165,7 +165,7 @@ final internal class CoachMarkView : UIView, CoachMarkBodyHighlightArrowDelegate
 
         self.addSubview(self.bodyView as! UIView)
         
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[bodyView]|", options: NSLayoutFormatOptions(rawValue: 0),
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[bodyView]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                                                                            metrics: nil, views: ["bodyView": self.bodyView]))
 
         let bodyStickToTop = NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal,
